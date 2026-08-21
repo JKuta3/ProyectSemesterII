@@ -7,5 +7,3 @@ Preguntas en examenes detalle
     - Punteros aprender 
     - Buenas practicas en C#
     - Clases en C# -Llamar de distintos folders llamar funciones de distinta clase
-
-jkjkJK321123//($&
