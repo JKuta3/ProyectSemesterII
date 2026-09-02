@@ -21,11 +21,34 @@ namespace GestorPrincipal
             {21,FunctionTask.Task21} ,{22,FunctionTask.Task22} ,{23,FunctionTask.Task23} ,{24,FunctionTask.Task24} ,{25,FunctionTask.Task25},
             {26,FunctionTask.Task26} ,{27,FunctionTask.Task27} ,{28,FunctionTask.Task28} ,{29,FunctionTask.Task29} ,{30,FunctionTask.Task30},
             {31,FunctionTask.Task31} ,{32,FunctionTask.Task32} ,{33,FunctionTask.Task33} ,{34,FunctionTask.Task34} ,{35,FunctionTask.Task35},
-            {36,FunctionTask.Task36} ,{37,FunctionTask.Task37} ,{38,FunctionTask.Task38} ,{39,FunctionTask.Task39},{40,FunctionTask.Task40}
+            {36,FunctionTask.Task36} ,{37,FunctionTask.Task37} ,{38,FunctionTask.Task38} ,{39,FunctionTask.Task39},{40,FunctionTask.Task40},
+            {41, FunctionTask.Task41},{42, FunctionTask.Task42},{43, FunctionTask.Task43},{44, FunctionTask.Task44},{45, FunctionTask.Task45},
+            {90 , FunctionTask.InClass0},{91 , FunctionTask.InClass1},{92 , FunctionTask.InClass2},{93 , FunctionTask.InClass3}
             };
             if (tasks.TryGetValue(search, out Action selectionTask))//No usar solo Contains
             {
                 selectionTask();
+            }
+            else
+            {
+                Console.WriteLine("No se encontro la tarea que esta buscando");
+            }
+        
+        }
+        public static void FilLevel(int search)
+        {
+            var level = new Dictionary<int, Action>
+            {
+                {1 , FunctionTask.MenuL1},
+                {2 , FunctionTask.MenuL2},
+                {3 , FunctionTask.MenuL3},
+                {4 , FunctionTask.MenuL4},
+                {5 , FunctionTask.MenuL5},
+                {6 , FunctionTask.MenuL6}
+            };
+            if (level.TryGetValue(search, out Action selectionMenu))
+            {
+                selectionMenu();
             }
             else
             {
@@ -44,9 +67,98 @@ namespace GestorPrincipal
             Console.WriteLine(">> Nivel 2: Condicionales Simples (if / else) (11 - 20)");
             Console.WriteLine(">> Nivel 3: Condicionales Múltiples (if / else if / else) (21 - 30)");
             Console.WriteLine(">> Nivel 4: Modularización, Funciones y Tuplas (31 - 40)");
+            Console.WriteLine(">> Nivel 5: Ciclos y Loops (41 - 45)");
+            Console.WriteLine(">> Nivel 6: Ver ejercicios de clases (90 - 94)");
             Console.Write(">> Seleccione el ejercicio que quiere ver: ");
             
         }
+
+        //Menu level 1
+        public static void MenuL1()
+        {
+            Console.WriteLine("=== NIVEL 1: Variables, Constantes y Operaciones Básicas ===");
+            Console.WriteLine("Ejercicio 01: Mostrar en consola el mensaje \"Bienvenido a Programación II\" junto con tu nombre almacenado en una variable.");
+            Console.WriteLine("Ejercicio 02: Declarar una constante `PI = 3.14159` y calcular el área de un círculo pidiendo el radio al usuario.");
+            Console.WriteLine("Ejercicio 03: Pedir al usuario su año de nacimiento y calcular su edad aproximada restándolo del año actual.");
+            Console.WriteLine("Ejercicio 04: Crear un programa que solicite un precio de producto y le aplique el IVA (13%) usando una constante.");
+            Console.WriteLine("Ejercicio 05: Solicitar dos números decimales (`double`) y mostrar la suma, resta, multiplicación y división.");
+            Console.WriteLine("Ejercicio 06: Pedir al usuario 3 notas de exámenes y calcular el promedio final");
+            Console.WriteLine("Ejercicio 07: Intercambiar los valores de dos variables. (Ejemplo: si `a = 5` y `b = 10`, al final `a` debe valer 10 y `b` valer 5).");
+            Console.WriteLine("Ejercicio 08: Convertir una temperatura dada en grados Celsius a Fahrenheit usando la fórmula: `(C * 9/5) + 32`.");
+            Console.WriteLine("Ejercicio 09: Pedir una cantidad de minutos al usuario y calcular a cuántas horas y minutos equivalen");
+            Console.WriteLine("Ejercicio 10: Calcular el residuo (módulo `%`) de dividir dos números ingresados por el usuario.");
+            Console.Write(">> Seleccione el ejercicio que quiere ver: ");
+        }
+
+        public static void MenuL2()
+        {
+            Console.WriteLine("=== Nivel 2: Condicionales Simples (if / else) (11 - 20) ===");
+            Console.WriteLine("Ejercicio 11: Solicitar la edad del usuario e indicar si es mayor de edad (18 años o más) o menor de edad.");
+            Console.WriteLine("Ejercicio 12: Pedir un número entero y determinar si es **par** o **impar** usando el operador `%`.");
+            Console.WriteLine("Ejercicio 13: Solicitar dos números e imprimir cuál de los dos es el mayor.");
+            Console.WriteLine("Ejercicio 14: Pedir un número e indicar si es positivo o negativo.");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+        }
+        public static void MenuL3()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+        }
+
+public static void MenuL4()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+        }
+
+        public static void MenuL5()
+        {
+            Console.WriteLine("Ejercicio 41 Loop: Tabla de multiplicar Pide un número al usuario y muestra su tabla de multiplicar del 1 al 12 usando un ciclo for. El formato de cada línea debe ser 7 x 3 = 21.");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+        }
+
+        public static void MenuL6()
+        {
+            Console.WriteLine("Ejercicio 90: Validacion con Parse y switch");
+            Console.WriteLine("Ejercicio 91: Loop con While <= 5");
+            Console.WriteLine("Ejercicio 92: do-while ");
+            Console.WriteLine("Ejercicio 93: do-while para validad edades");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+        }
+
 
         //Task 1
         public static void Task1()
@@ -418,7 +530,6 @@ namespace GestorPrincipal
         public static void Task23()
         {
             Console.WriteLine("Ejercicio 23: Convertir una nota numérica (0-100) a letra: 90-100: 'A', 80-89: 'B', 70-79: 'C', 60-69: 'D', Menor a 60: 'F'.");
-            Console.WriteLine("Ejercicio 21: Pedir un número entero e indicar si es **positivo**, **negativo** o **cero**.");
             int number = FunctionForValidate.ReadIntegers("Ingresa el numero: ");
             if(number < 0 )
             {
@@ -481,21 +592,26 @@ namespace GestorPrincipal
             Console.WriteLine("3: Multiplicación");
             Console.WriteLine("4: División");
             int option = FunctionForValidate.ReadIntegers("Ingrese una opción: ");
+            double result;
             if (option == 1)
             {
-                Operate.sum(a,b);
+                result = Operate.sum(a,b);
+                Console.WriteLine(result);
             }
             else if (option == 2)
             {
-                Operate.rest(a,b);
+                result = Operate.rest(a,b);
+                Console.WriteLine(result);
             }
             else if (option == 3)
             {
-                Operate.mult(a,b);
+                result = Operate.mult(a,b);
+                Console.WriteLine(result);
             }
             else if (option == 4)
             {
-                Operate.div(a,b);
+                result = Operate.div(a,b);
+                Console.WriteLine(result);
             }
             else
             {
@@ -558,7 +674,6 @@ namespace GestorPrincipal
         public static void Task27()
         {
             Console.WriteLine("Ejercicio 27: Calcular el Índice de Masa Corporal (IMC) `peso / (estatura * estatura)` y categorizarlo: Bajo peso (< 18.5), Normal (18.5 - 24.9), Sobrepeso (25 - 29.9), Obesidad (30+).");
-            Console.WriteLine("Ejercicio 24: Pedir la edad de una persona e indicar su etapa de vida: Niño (0-12), Adolescente (13-17), Adulto (18-64), Adulto mayor (65+).");
             double peso = FunctionForValidate.ReadDouble("Ingresa su peso: ");
             double estatura = FunctionForValidate.ReadDouble("Ingresa su estatura: ");;
             double imc = peso / (estatura * estatura);
@@ -664,26 +779,64 @@ namespace GestorPrincipal
         public static void Task31()
         {
             Console.WriteLine("Ejercicio 31: Método void Crear una función `Saludar(string nombre)` que imprima \"Hola [nombre], bienvenido a C#\".");
-            
+            string name = Console.ReadLine();
+            Saludar(name);
+        }
+
+        public static void Saludar(string name)
+        {
+            Console.WriteLine($"Hola {name}");
         }
         //Task32
         public static void Task32()
         {
             Console.WriteLine("Ejercicio 32: Función Crear una función `EsPar(int numero)` que retorne `true` si el número es par o `false` si es impar.");
-            
+            int number = FunctionForValidate.ReadIntegers("Ingrese el numero: ");
+            Boolean result = EsPar(number);
+            Console.WriteLine($"{result}");
+        }
+
+        public static Boolean EsPar(int number)
+        {
+            if (number % 2 == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         //Task33
         public static void Task33()
         {
             Console.WriteLine("Ejercicio 33: Función Crear una función `CalcularMayor(double n1, double n2)` que retorne el número más alto.");
-            
+            double number1 = FunctionForValidate.ReadDouble("Ingresa el primer numero: ");
+            double number2 = FunctionForValidate.ReadDouble("Ingresa el segundo numero: ");
+            double result = CalcularMayor(number1, number2);
+            Console.WriteLine($"El numero mayor es: {result}");
+        }
+
+        public static double CalcularMayor(double number1, double number2)
+        {
+            if (number1 > number2)
+            {
+                return number1;
+            }
+            else 
+            {
+                return number2;
+            }
         }
         //Task34
         public static void Task34()
         {
             Console.WriteLine("Ejercicio 34: Validación Crear una función para dividir dos números que valide mediante un `if` que el divisor no sea 0 antes de operar.");
+            double number1 = FunctionForValidate.ReadDouble("Ingresa el primer numero: ");
+            double number2 = FunctionForValidate.ReadDouble("Ingresa el segundo numero: ");
             
         }
+
         //Task35
         public static void Task35()
         {
@@ -719,6 +872,139 @@ namespace GestorPrincipal
         {
             Console.WriteLine("Ejercicio 40: Proyecto Corto Crear un menú completo interactivo en consola con un método `MostrarMenu()`, que permita elegir entre calcular área de triángulo, evaluar si un número es par o determinar el mayor de 3 números.");
             
+        }
+
+        //Task loop
+
+        //Task 1-loop
+        public static void Task41()
+        {
+            Console.WriteLine("Ejercicio 1 Loop: Tabla de multiplicar Pide un número al usuario y muestra su tabla de multiplicar del 1 al 12 usando un ciclo for. El formato de cada línea debe ser 7 x 3 = 21.");
+            int numbermult = FunctionForValidate.ReadIntegers("Ingrese su numero: ");
+            for (int i = 1; i<=12 ; i++)
+            {
+                Console.WriteLine($"{numbermult} x {i} = {numbermult * i}");
+            }
+        }
+
+        //Task 2-Loop
+        public static void Task42()
+        {
+            Console.WriteLine("Ejercicio 2 Loop: Contador y acumulador Con un while, pide números al usuario hasta que ingrese un cero. Al terminar, muestra cuántos números ingresó, la suma total y el promedio.");
+            while (true)
+            {
+                int number = FunctionForValidate.ReadIntegers("Ingrese el numero: ");
+                
+            }
+        }
+        //Task 3-Loop
+        public static void Task43()
+        {
+            Console.WriteLine("Ejercicio 2 Loop: Contador y acumulador Con un while, pide números al usuario hasta que ingrese un cero. Al terminar, muestra cuántos números ingresó, la suma total y el promedio.");
+            while (true)
+            {
+                int number = FunctionForValidate.ReadIntegers("Ingrese el numero: ");
+                
+            }
+        }
+        //Task 4-Loop
+        public static void Task44()
+        {
+            Console.WriteLine("Ejercicio 2 Loop: Contador y acumulador Con un while, pide números al usuario hasta que ingrese un cero. Al terminar, muestra cuántos números ingresó, la suma total y el promedio.");
+            while (true)
+            {
+                int number = FunctionForValidate.ReadIntegers("Ingrese el numero: ");
+                
+            }
+        }
+        //Task 5-Loop
+        public static void Task45()
+        {
+            Console.WriteLine("Ejercicio 2 Loop: Contador y acumulador Con un while, pide números al usuario hasta que ingrese un cero. Al terminar, muestra cuántos números ingresó, la suma total y el promedio.");
+            while (true)
+            {
+                int number = FunctionForValidate.ReadIntegers("Ingrese el numero: ");
+                
+            }
+        }
+
+        //In class loop
+        public static void InClass0()
+        {
+            Console.WriteLine("Ingrese un numero del 1 al 7:");
+            int dia = int.Parse(Console.ReadLine());
+            switch (dia)
+            {
+                case 1:
+                    Console.WriteLine("Lunes");
+                    break;
+                case 2:
+                    Console.WriteLine("Martes");
+                    break;
+                case 3:
+                    Console.WriteLine("Miercoles");
+                    break;
+                case 4:
+                    Console.WriteLine("Jueves");
+                    break;
+                case 5:
+                    Console.WriteLine("Viernes");
+                    break;
+                case 6:
+                case 7:
+                    Console.WriteLine("Fin de semana");
+                    break;
+
+                default:
+                    Console.WriteLine("Numero invalido");
+                    break;
+            }
+        }
+
+        //In class loop
+        public static void InClass1()
+        {
+            int contador = 1;
+            while (contador <= 5)          
+            {
+                Console.WriteLine("Vuelta numero " + contador);
+                contador++;                  
+            }
+
+            Console.WriteLine("El ciclo termino.");
+        }
+
+        //In class loop
+        public static void InClass2()
+        {
+            int opcion;
+            do
+            {
+                Console.WriteLine("1. Jugar");
+                Console.WriteLine("2. Salir");
+                Console.Write("Opcion: ");
+                opcion = int.Parse(Console.ReadLine());
+            }
+            while (opcion != 2);
+        }
+
+        //In class loop
+        public static void InClass3()
+        {
+            int edad;
+            do
+            {
+                Console.Write("Ingrese su edad (1 a 120): ");
+                edad = int.Parse(Console.ReadLine());
+
+                if (edad < 1 || edad > 120)
+                {
+                    Console.WriteLine("Edad invalida. Intente de nuevo.");
+                }
+            }
+            while (edad < 1 || edad > 120);
+
+            Console.WriteLine("Edad registrada: " + edad);
         }
     
     }   
