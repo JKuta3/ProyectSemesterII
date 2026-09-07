@@ -119,7 +119,7 @@ namespace GestorPrincipal
             Console.WriteLine("Ejercicio 21: Pedir un número entero e indicar si es **positivo**, **negativo** o **cero**.");
             Console.WriteLine("Ejercicio 22: Solicitar 3 números distintos e imprimir cuál de los tres es el mayor de todos.");
             Console.WriteLine("Ejercicio 23: Convertir una nota numérica (0-100) a letra: 90-100: 'A', 80-89: 'B', 70-79: 'C', 60-69: 'D', Menor a 60: 'F'.");
-            Console.WriteLine("");
+            Console.WriteLine("Ejercicio 24: Pedir la edad de una persona e indicar su etapa de vida: Niño (0-12), Adolescente (13-17), Adulto (18-64), Adulto mayor (65+).");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");
