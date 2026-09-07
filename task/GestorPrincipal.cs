@@ -44,6 +44,17 @@ namespace GestorPrincipal{
                     searchTask = FunctionForValidate.ReadIntegers("Ingrese el numero del ejercicio: ");
                     CoreFunction.CoreDictionary(searchTask);
                     break;
+                case 7:
+                    CoreFunction.FilLevel(search);
+                    searchTask = FunctionForValidate.ReadIntegers("Ingrese el numero del ejercicio: ");
+                    CoreFunction.CoreDictionary(searchTask);
+                    break;
+
+                default:
+                    Console.WriteLine("No existe esa opcion");
+                break;
+        
+            
             }
             
 
