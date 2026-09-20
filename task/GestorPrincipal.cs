@@ -15,39 +15,46 @@ namespace GestorPrincipal{
                     CoreFunction.FilLevel(search);
                     searchTask = FunctionForValidate.ReadIntegers("Ingrese el numero del ejercicio: ");
                     CoreFunction.CoreDictionary(searchTask);
+                    Console.WriteLine();
                     break;
                 
                 case 2:
                     CoreFunction.FilLevel(search);
                     searchTask = FunctionForValidate.ReadIntegers("Ingrese el numero del ejercicio: ");
                     CoreFunction.CoreDictionary(searchTask);
+                    Console.WriteLine();
                     break;
                 
                 case 3:
                     CoreFunction.FilLevel(search);
                     searchTask = FunctionForValidate.ReadIntegers("Ingrese el numero del ejercicio: ");
                     CoreFunction.CoreDictionary(searchTask);
+                    Console.WriteLine();
                     break;
                 
                 case 4:
                     CoreFunction.FilLevel(search);
                     searchTask = FunctionForValidate.ReadIntegers("Ingrese el numero del ejercicio: ");
                     CoreFunction.CoreDictionary(searchTask);
+                    Console.WriteLine();
                     break;
                 case 5:
                     CoreFunction.FilLevel(search);
                     searchTask = FunctionForValidate.ReadIntegers("Ingrese el numero del ejercicio: ");
                     CoreFunction.CoreDictionary(searchTask);
+                    Console.WriteLine();
                     break;
                 case 6:
                     CoreFunction.FilLevel(search);
                     searchTask = FunctionForValidate.ReadIntegers("Ingrese el numero del ejercicio: ");
                     CoreFunction.CoreDictionary(searchTask);
+                    Console.WriteLine();
                     break;
                 case 7:
                     CoreFunction.FilLevel(search);
                     searchTask = FunctionForValidate.ReadIntegers("Ingrese el numero del ejercicio: ");
                     CoreFunction.CoreDictionary(searchTask);
+                    Console.WriteLine();
                     break;
 
                 default:

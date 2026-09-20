@@ -8,6 +8,7 @@ using System.Runtime.Intrinsics.Arm;
 using System.Timers;
 using System.Xml.XPath;
 using Microsoft.VisualBasic;
+using System.Threading;
 
 namespace GestorPrincipal
 {
@@ -29,7 +30,8 @@ namespace GestorPrincipal
             {55,FunctionTask.Task55} ,{56,FunctionTask.Task56} ,{57,FunctionTask.Task57} ,{58,FunctionTask.Task58},{59,FunctionTask.Task59},
             {60, FunctionTask.Task61},{62, FunctionTask.Task62},{63, FunctionTask.Task63},{64, FunctionTask.Task64},{65, FunctionTask.Task65},
             {66,FunctionTask.Task66} ,{67,FunctionTask.Task67} ,{68,FunctionTask.Task68} ,{69,FunctionTask.Task39},{70,FunctionTask.Task70},
-            {71, FunctionTask.Task71},{72, FunctionTask.Task72},{73, FunctionTask.Task73},{74, FunctionTask.Task74}
+            {71, FunctionTask.Task71},{72, FunctionTask.Task72},{73, FunctionTask.Task73},{74, FunctionTask.Task74}, {75, FunctionTask.Task75},
+            {76, FunctionTask.Task76}, {77, FunctionTask.Task77}
             };
             if (tasks.TryGetValue(search, out Action selectionTask))//No usar solo Contains
             {
@@ -2928,6 +2930,210 @@ public static void MenuL4()
                 }
 
             }while(opcion != 4);
+        }
+
+        ///Task of Guerra del chaco
+        public static void Task75()
+        {
+                // Lista de diálogos que se mostrarán en orden
+            string[] dialogos = new string[]
+            {
+                "Hola, viajero... Bienvenido al sistema de la terminal.",
+                
+                "Este es un texto que se escribe letra por letra, simulando un teclado.",
+                "Presiona ENTER para avanzar al siguiente mensaje...",
+                "¡Perfecto! Has aprendido a controlar el flujo del diálogo."
+            };
+
+            // Recorremos cada diálogo
+            foreach (string dialogo in dialogos)
+            {
+                EscribirTexto(dialogo, velocidadMs: 40);
+                
+                // Pausa hasta que el usuario presione ENTER
+                EsperarEnter();
+            }
+
+            Console.WriteLine("\n[Fin de la conversación]");
+        }
+        /// <summary>
+        /// Escribe un texto caracter por caracter simulando mecanografía.
+        /// </summary>
+        /// <param name="texto">Cadena de texto a imprimir.</param>
+        /// <param name="velocidadMs">Milisegundos de espera entre cada letra.</param>
+        static void EscribirTexto(string texto, int velocidadMs = 30)
+        {
+            foreach (char caracter in texto)
+            {
+                Console.Write(caracter);
+                Thread.Sleep(velocidadMs); // Detiene la ejecución por N milisegundos
+            }
+            Console.WriteLine(); // Salto de línea al terminar la frase
+        }
+
+        /// <summary>
+        /// Muestra un indicador visual y espera la tecla ENTER.
+        /// </summary>
+        static void EsperarEnter()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("\n[Presiona ENTER para continuar...]");
+            Console.ResetColor();
+
+            // Espera explícitamente a que presione ENTER
+            Console.ReadLine();
+            
+            // OPCIONAL: Limpia la pantalla para el siguiente diálogo
+            // Console.Clear(); 
+        }
+
+        public static void Task76()
+        {
+            for (int row = 1; row < 11; row++)
+            {
+                for (char column = 'a'; column < 'k'; column++)
+                {
+                    Console.WriteLine($"The cell is ({row}, {column})");
+                }
+            }
+        }
+
+        public static void Task77()
+        {
+            
+            int distanciaObjetivo = 40;
+            int metrosAvanzado = 0;
+            int dias = 1;
+            int fehchActual = 7;
+            bool asaltoRealizado = false;
+            int desgasteZapatador = 100;
+            int sospechaP = 25;
+
+            do
+            {
+                if (dias == 1)
+                {
+                    Console.WriteLine($"""
+                    =================================================
+                        DIA {dias} - {fehchActual += 1} JUNIO DE 1933
+                    =================================================
+
+                    El general Hans Kundt nos dio la orden de realizar 
+                    un tunel con un 1.5 m de altura paroximadamente un 
+                    ancho de 1m y una distancia calculada de 40 m
+
+                    """);
+                }
+                else
+                {
+                    Console.WriteLine($"""
+                    =================================================
+                                PARTE DEL DIA {dias}
+                    =================================================
+
+                    Los metros avanzados son de {metrosAvanzado} m
+                    """);
+                }
+                if (desgasteZapatador <= 33)
+                {
+                    Console.WriteLine("- El desgaste del efectivo se acumula");
+                }
+                if (sospechaP >= 75)
+                {
+                    Console.WriteLine("Guarden mas silencio las sospechas estan aumentando del lado paraguayo");
+                }
+
+                Console.WriteLine("""
+                
+                1) Cavar rapido --> se avanzan mas metros pero las sospechas aumentan
+                2) Cavar lento --> se avanza poco pero las sospechas no aumentan mucho 
+                3) Detenerse --> No se avanza pero puedes ver las sospechas
+                4) Descanzar --> No se avanza pero el efectivo (zapatadores) descansa y se recuperan
+
+                """);
+
+                int opcion = int.Parse(Console.ReadLine());
+
+                switch (opcion)
+                {
+                    
+                    case 1:
+                        metrosAvanzado +=5;
+                        sospechaP += 8;
+                        desgasteZapatador -=8;
+
+                        break;
+                    case 2:
+
+                        metrosAvanzado +=3;
+                        sospechaP += 4;
+                        desgasteZapatador -=4;
+
+                        break;
+                
+                    case 3:
+                        Console.WriteLine($"Detenerse: Las sospechas paraguayas son de {sospechaP}");
+                        break;
+                    case 4:
+                        desgasteZapatador +=4;
+                        break;
+
+                    default:
+                        Console.WriteLine("No se dio la orden perdite un dia");
+                        break;
+                }
+                dias++;
+                if (metrosAvanzado >= distanciaObjetivo)
+                {
+                    asaltoRealizado = true;
+                }
+
+            }while(metrosAvanzado < distanciaObjetivo && desgasteZapatador > 0 && sospechaP < 100 && dias < 30);
+
+            if (asaltoRealizado == true)
+            {
+                Console.WriteLine($"""
+                
+                =======================================
+                MISION CUMPLIDA - SE REALIZO EL ASALTO
+                =======================================
+
+                Dias = {dias}
+                """);
+            }
+            else
+            {
+                Console.WriteLine($"""
+                
+                =====================================================
+                MISION FALLIDA - PASATE LA FECHA HISTORICA DEL ASALTO
+                =====================================================
+
+                Dias = {dias}
+                """);
+            }
+            if (desgasteZapatador <= 0)
+            {
+                Console.WriteLine($"""
+                
+                ==============================================
+                MISION FALLIDA: DESGASTE CORPORAL DEL EFECTIVO
+                ==============================================
+
+                Dias = {dias}
+                """);
+            }  
+            if(sospechaP >= 100)
+            {
+                Console.WriteLine($"""
+                
+                ==========================================================
+                MISION FALLIDA - LOS PARAGUAOS REALIZARON UN CONTRA ATAQUE
+                ==========================================================
+
+                Dias = {dias}
+                """);
+            }
         }
     
     }   
